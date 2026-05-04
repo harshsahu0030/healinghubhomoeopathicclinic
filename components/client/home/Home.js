@@ -8,6 +8,9 @@ import HomeBanner from "./HomeBanner";
 import PainAgitation from "./PainAligation";
 import HomeVideo from "./HomeVideo";
 import Solution from "./Solution";
+import Treatments from "../common/Treatment";
+import Doctor from "../common/Doctor";
+import Faqs from "../common/Faqs";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +68,7 @@ const Home = ({ treatments = [] }) => {
     <div ref={containerRef}>
       <section
         id="home-banner-section"
-        className="min-h-screen xl:h-screen w-full"
+        className="min-h-screen xl:h-screen w-full relative overflow-hidden px-5 py-20 xl:px-20 xl:py-40"
       >
         <HomeBanner treatments={treatments} />
       </section>
@@ -83,11 +86,17 @@ const Home = ({ treatments = [] }) => {
         <Solution />
       </section>
 
-      <section className="padding py-20  h-fit w-full"></section>
+      <section className="padding py-20  h-fit w-full">
+        <Treatments treatments={treatments} />
+      </section>
 
-      <section className="padding py-20  h-fit w-full bg-(--bg-dark)"></section>
+      <section className="padding py-20  h-fit w-full bg-(--bg-dark)">
+        <Doctor />
+      </section>
 
-      <section className="padding py-20  h-fit w-full"></section>
+      <section className="padding py-20  h-fit w-full">
+        <Faqs />
+      </section>
     </div>
   );
 };

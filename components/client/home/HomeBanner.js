@@ -67,10 +67,7 @@ const HomeBanner = ({ treatments = [] }) => {
   );
 
   return (
-    <div
-      ref={bannerRef}
-      className="relative h-full w-full overflow-hidden px-5 py-20 xl:px-20 xl:py-40"
-    >
+    <div ref={bannerRef} className="h-full w-full">
       <Image
         src={HeroImage01}
         alt={siteConfig?.name}
