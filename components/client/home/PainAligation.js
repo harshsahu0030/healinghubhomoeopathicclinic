@@ -58,6 +58,18 @@ const PainAgitation = () => {
         opacity: 0,
         stagger: 0.02,
       });
+
+      gsap.from(".pain-images", {
+        opacity: 0,
+        y: 50,
+
+        scrollTrigger: {
+          trigger: ".pain-images",
+          start: "top 60%",
+          end: "30% 50%",
+          scrub: 2,
+        },
+      });
     },
     { scope: painRef },
   );
@@ -122,7 +134,7 @@ const PainAgitation = () => {
         </div>
 
         {/* right  */}
-        <div className="col-span-7 h-50 xl:h-80">
+        <div className="col-span-7 h-50 xl:h-80 pain-images">
           <Marquee data={painPoints} />
         </div>
       </div>

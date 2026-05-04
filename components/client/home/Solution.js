@@ -84,6 +84,32 @@ const Solution = () => {
         opacity: 0,
         stagger: 0.02,
       });
+
+      gsap.from(".sol-images", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+
+        scrollTrigger: {
+          trigger: ".sol-images",
+          start: "top 60%",
+          end: "30% 50%",
+          scrub: 2,
+        },
+      });
+
+      gsap.from(".sol-counters", {
+        opacity: 0,
+        y: -50,
+        stagger: 0.2,
+
+        scrollTrigger: {
+          trigger: ".sol-counters",
+          start: "top 60%",
+          end: "30% 50%",
+          scrub: 2,
+        },
+      });
     },
     { scope: solRef },
   );
@@ -95,7 +121,7 @@ const Solution = () => {
     >
       {/* left  */}
       <div className="w-full flex flex-col gap-10">
-        <div className="w-full h-full top-0 left-0  overflow-hidden  ">
+        <div className="w-full h-full top-0 left-0  overflow-hidden sol-images">
           <Image
             src={Solutions01}
             alt="healing hub homoeopathic clinic"
@@ -107,7 +133,7 @@ const Solution = () => {
 
         <div className="w-full  grid grid-cols-2 md:grid-cols-4 gap-5">
           {outcomes?.map((item, index) => (
-            <div key={item.head} className="flex flex-col gap-2">
+            <div key={item.head} className="flex flex-col gap-2 sol-counters">
               <div className="text-6xl font-semibold flex items-center">
                 <span className="sol-counter">{item.head}</span>
                 <span>{item.headEnd}</span>
@@ -152,7 +178,7 @@ const Solution = () => {
           {IntroduceYou?.map((item, index) => (
             <div
               key={index}
-              className="relative h-full w-full rounded-lg overflow-hidden"
+              className="relative h-full w-full rounded-lg overflow-hidden sol-images"
             >
               <Image
                 src={item.url}

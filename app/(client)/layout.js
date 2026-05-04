@@ -6,22 +6,25 @@ import SmoothScroller from "@/components/client/common/SmoothScroller";
 import Testimonials from "@/components/client/common/Testimonials";
 import { getTestimonialsList } from "@/lib/graphql/testimonials";
 import { getTreatmentsList } from "@/lib/graphql/treatment";
+import { CursorProvider } from "./context/CursorContext";
+import CustomCursor from "@/components/client/common/CustomCursor";
 
 export default async function RootLayout({ children }) {
   const treatments = await getTreatmentsList();
   const testimonials = await getTestimonialsList();
 
   return (
-    <>
+    <CursorProvider>
+      <CustomCursor />
       <Header />
-      <SmoothScroller>
-        <PageLoader>
+      <PageLoader>
+        <SmoothScroller>
           {children}
           <Testimonials testimonials={testimonials} />
           <CTA />
           <Footer treatments={treatments} />
-        </PageLoader>
-      </SmoothScroller>
-    </>
+        </SmoothScroller>
+      </PageLoader>
+    </CursorProvider>
   );
 }
