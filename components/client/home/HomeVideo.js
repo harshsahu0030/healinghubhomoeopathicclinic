@@ -24,7 +24,6 @@ const HomeVideo = () => {
           end: "+=200",
           scrub: 1,
           pin: true,
-          markers: true,
         },
       });
     },
@@ -33,16 +32,17 @@ const HomeVideo = () => {
 
   return (
     <section
+      aria-label="home-video"
       ref={vidRef}
       className="relative h-screen w-full flex justify-center items-center"
     >
-      <div ref={videoRef}>
+      <div ref={videoRef} className="w-[50%] h-[50%]">
         <Image
           src={ScollerImage}
           alt="hello"
           height={800}
           width={800}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-lg"
           priority
         />
       </div>
