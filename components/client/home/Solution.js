@@ -105,7 +105,7 @@ const Solution = () => {
 
         scrollTrigger: {
           trigger: ".sol-counters",
-          start: "top 60%",
+          start: "top 30%",
           end: "30% 50%",
           scrub: 2,
         },
