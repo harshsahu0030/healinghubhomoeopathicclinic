@@ -14,12 +14,23 @@ import "swiper/css/pagination";
 // import required modules
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import { siteConfig } from "@/data/siteConfig";
+import { useCursor } from "@/context/CursorContext";
 
 const Testimonials = ({ testimonials = [] }) => {
+  const { updateCursor, resetCursor } = useCursor();
+
   return (
     <section
       aria-label="testimonials"
-      className="w-full h-full grid xl:grid-cols-12 gap-10 text-(--text-dark) py-20 padding "
+      className="w-full h-full grid xl:grid-cols-12 gap-10 text-(--text-dark) py-20 padding"
+      onMouseEnter={() =>
+        updateCursor({
+          cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
+          text: "Testmonials",
+          textClass: "text-(--text-white)",
+        })
+      }
+      onMouseLeave={resetCursor}
     >
       {/* left  */}
       <div className="h-full w-full xl:col-span-4 flex justify-center items-center">

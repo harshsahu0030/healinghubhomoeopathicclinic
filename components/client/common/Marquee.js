@@ -49,13 +49,15 @@ const Marquee = ({ data = [] }) => {
               key={index}
               className="relative h-full min-w-100 max-w-100 rounded-lg overflow-hidden"
             >
-              <Image
-                src={item?.url}
-                alt="healing hub homoeopathic clinic"
-                width={600}
-                height={600}
-                className="h-full w-full object-cover col-span-5 hover:scale-125 transition-all ease-in-out duration-500"
-              />
+              {item?.url ? (
+                <Image
+                  src={item?.url}
+                  alt="healing hub homoeopathic clinic"
+                  width={600}
+                  height={600}
+                  className="h-full w-full object-cover col-span-5 hover:scale-125 transition-all ease-in-out duration-500"
+                />
+              ) : null}
 
               {item?.name ? (
                 <p className="absolute  bg-(--primary-forest)/30 backdrop-blur-sm right-5 top-5 left-5 rounded-lg p-2 text-lg text-(--text-white) font-medium text-wrap w-fit">

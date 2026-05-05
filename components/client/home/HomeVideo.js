@@ -5,10 +5,12 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScollerImage from "@/public/pain04.jpeg";
+import { useCursor } from "@/context/CursorContext";
 
 const HomeVideo = () => {
   const vidRef = useRef(null);
   const videoRef = useRef(null);
+  const { updateCursor, resetCursor } = useCursor();
 
   useGSAP(
     () => {
@@ -35,6 +37,14 @@ const HomeVideo = () => {
       aria-label="home-video"
       ref={vidRef}
       className="relative h-screen w-full flex justify-center items-center"
+      onMouseEnter={() =>
+        updateCursor({
+          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
+          text: "Healing Video",
+          textClass: "text-(--text-dark)",
+        })
+      }
+      onMouseLeave={resetCursor}
     >
       <div ref={videoRef} className="w-[50%] h-[50%]">
         <Image

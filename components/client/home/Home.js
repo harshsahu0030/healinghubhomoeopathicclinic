@@ -90,7 +90,7 @@ const Home = ({ treatments = [] }) => {
         <Treatments treatments={treatments} />
       </section>
 
-      <section className="padding py-20  h-fit w-full bg-(--bg-dark)">
+      <section className="padding py-20 h-full w-full bg-(--bg-dark)">
         <Doctor />
       </section>
 

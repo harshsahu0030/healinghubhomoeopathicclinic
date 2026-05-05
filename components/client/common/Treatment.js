@@ -5,9 +5,43 @@ import { GrNext } from "react-icons/gr";
 import Treatment from "@/public/treatment.jpeg";
 import Image from "next/image";
 import { useRef } from "react";
+import { useCursor } from "@/context/CursorContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+}
 
 const Treatments = ({ treatments = [] }) => {
   const treatRef = useRef();
+  const { updateCursor, resetCursor } = useCursor();
+
+  useGSAP(
+    () => {
+      let painSplit = SplitText.create(".treat-split", {
+        type: "chars, words, lines",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: treatRef.current,
+          start: "top 80%",
+          end: "30% 50%",
+          scrub: 2,
+        },
+      });
+
+      tl.from(painSplit.chars, {
+        opacity: 0,
+        stagger: 0.02,
+      });
+    },
+    {
+      dependencies: [treatRef],
+    },
+  );
 
   return (
     <section
@@ -17,8 +51,10 @@ const Treatments = ({ treatments = [] }) => {
       {/* left  */}
       <div className="col-span-5 flex flex-col gap-10">
         <div className="flex flex-col gap-2">
-          <h3 className="font-medium text-lg">Conditions We Treat</h3>
-          <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+          <h3 className="font-medium text-lg treat-split">
+            Conditions We Treat
+          </h3>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight treat-split">
             Each treatment is fully personalized to your body
           </h2>
         </div>
@@ -28,13 +64,13 @@ const Treatments = ({ treatments = [] }) => {
             <li
               key={index}
               className="w-full"
-              //   onMouseEnter={() =>
-              //     updateCursor({
-              //       cursorClass: "h-80 w-80 rounded-lg",
-              //       image: `${process.env.NEXT_PUBLIC_SITE}${treatment?.featuredImage?.node?.filePath}`,
-              //     })
-              //   }
-              //   onMouseLeave={resetCursor}
+              onMouseEnter={() =>
+                updateCursor({
+                  cursorClass: "h-80 w-80 rounded-lg",
+                  image: `${process.env.NEXT_PUBLIC_SITE}${treatment?.featuredImage?.node?.filePath}`,
+                })
+              }
+              onMouseLeave={resetCursor}
             >
               <Link
                 href={`/our-treatments/${treatment?.slug}`}
@@ -62,7 +98,17 @@ const Treatments = ({ treatments = [] }) => {
       </div>
 
       {/* center  */}
-      <div className="col-span-4">
+      <div
+        className="col-span-4"
+        onMouseEnter={() =>
+          updateCursor({
+            cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
+            text: "Our Treatments",
+            textClass: "text-(--text-white)",
+          })
+        }
+        onMouseLeave={resetCursor}
+      >
         <Image
           src={Treatment}
           alt="healing hub homoeopathic clinic"
@@ -73,16 +119,26 @@ const Treatments = ({ treatments = [] }) => {
       </div>
 
       {/* right  */}
-      <div className="col-span-3 flex flex-col justify-between gap-5">
+      <div
+        className="col-span-3 flex flex-col justify-between gap-5"
+        onMouseEnter={() =>
+          updateCursor({
+            cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
+            text: "Our Treatments",
+            textClass: "text-(--text-white)",
+          })
+        }
+        onMouseLeave={resetCursor}
+      >
         <div className="flex flex-col gap-5">
-          <p>
+          <p className="treat-split">
             At HealingHub Multi-Speciality Homoeopathic Clinic in Govandi,
             Mumbai, we provide effective homeopathic treatment for a wide range
             of acute and chronic conditions including skin problems, allergies,
             asthma, sinus issues, digestive disorders, hair fall, hormonal
             imbalances, and lifestyle-related diseases.
           </p>
-          <p>
+          <p className="treat-split">
             As a trusted homeopathy doctor in Mumbai, Dr. Mohd Aadil K. Khan
             focuses on personalized treatment that targets the root cause,
             helping patients achieve long-term relief and improved overall

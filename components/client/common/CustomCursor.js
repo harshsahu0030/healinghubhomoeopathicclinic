@@ -9,6 +9,7 @@ import { useRef } from "react";
 export default function CustomCursor() {
   const cursorRef = useRef(null);
   const imageRef = useRef(null);
+  const textRef = useRef(null);
   const { cursor } = useCursor();
 
   useGSAP(() => {
@@ -59,6 +60,20 @@ export default function CustomCursor() {
     { dependencies: [cursor?.image] },
   );
 
+  useGSAP(
+    () => {
+      if (cursor?.text !== "") {
+        gsap.from(textRef.current, {
+          scale: 0,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        });
+      }
+    },
+    { dependencies: [cursor?.text] },
+  );
+
   return (
     <div
       ref={cursorRef}
@@ -68,7 +83,8 @@ export default function CustomCursor() {
     >
       {cursor?.text ? (
         <span
-          className={`relative z-10 text-sm font-semibold flex justify-center items-center text-center p-2 ${cursor?.textClass}`}
+          ref={textRef}
+          className={`relative z-10 text-sm font-bold flex justify-center items-center text-center p-2 ${cursor?.textClass}`}
         >
           {cursor.text}
         </span>

@@ -1,33 +1,83 @@
 "use client";
 
+import { useCursor } from "@/context/CursorContext";
+import { siteConfig } from "@/data/siteConfig";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import Link from "next/link";
 import { useRef } from "react";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaUserGroup } from "react-icons/fa6";
+import Marquee from "./Marquee";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+}
 
 const Doctor = () => {
+  const { name, doctorImages } = siteConfig;
+
   const docRef = useRef();
+  const { updateCursor, resetCursor } = useCursor();
+
+  useGSAP(
+    () => {
+      let painSplit = SplitText.create(".doc-split", {
+        type: "chars, words, lines",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: docRef.current,
+          start: "top 80%",
+          end: "30% 70%",
+          scrub: 2,
+        },
+      });
+
+      tl.from(painSplit.chars, {
+        opacity: 0,
+        stagger: 0.02,
+      });
+    },
+    {
+      dependencies: [docRef],
+    },
+  );
 
   return (
-    <div ref={docRef} className="w-full h-w-full">
-      <div className="padding flex flex-col gap-10">
+    <div
+      ref={docRef}
+      className="w-full h-w-full"
+      onMouseEnter={() =>
+        updateCursor({
+          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
+          text: "Dr. Mohd Aadil K. Khan",
+          textClass: "text-(--text-dark)",
+        })
+      }
+      onMouseLeave={resetCursor}
+    >
+      <div className="padding flex flex-col gap-20">
         {/* top  */}
-
         <div className="flex flex-col gap-5 text-(--text-white) col-span-8">
           <div className="flex flex-col gap1">
-            <h3 className="font-medium text-lg">Meet Your Homoeopath</h3>
+            <h3 className="font-medium text-lg doc-split">
+              Meet Your Homoeopath
+            </h3>
 
-            <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-              Dr. Mohd Aadil K. Khan
+            <h2 className="text-3xl md:text-5xl font-semibold leading-tight doc-split">
+              {name}
             </h2>
           </div>
 
-          <p>
+          <p className="doc-split">
             Dr. Mohd Aadil K. Khan am passionate about helping you reclaim your
             health through gentle, natural therapies. Every patient deserves
             attentive care and a personalised approach.
           </p>
-          <p>
+          <p className="doc-split">
             With expertise in managing both acute and chronic
             conditions—including allergies, digestive issues, skin diseases,
             hormonal imbalances, and emotional health—Dr. Mohd Aadil Khan
@@ -53,10 +103,12 @@ const Doctor = () => {
             Read More
           </Link>
         </div>
-      </div>
 
-      {/* bottom  */}
-      <div className=""></div>
+        {/* bottom  */}
+        <div className="h-[50vh] w-full">
+          <Marquee data={doctorImages} />
+        </div>
+      </div>
     </div>
   );
 };
