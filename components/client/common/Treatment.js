@@ -67,7 +67,7 @@ const Treatments = ({ treatments = [] }) => {
               onMouseEnter={() =>
                 updateCursor({
                   cursorClass: "h-80 w-80 rounded-lg",
-                  image: `${process.env.NEXT_PUBLIC_SITE}${treatment?.featuredImage?.node?.filePath}`,
+                  image: `https://content.healinghubhomoeopathicclinic.com${treatment?.featuredImage?.node?.filePath}`,
                 })
               }
               onMouseLeave={resetCursor}
