@@ -4,57 +4,18 @@ import Link from "next/link";
 import { GrNext } from "react-icons/gr";
 import Treatment from "@/public/treatment.jpeg";
 import Image from "next/image";
-import { useRef } from "react";
 import { useCursor } from "@/context/CursorContext";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
-}
 
 const Treatments = ({ treatments = [] }) => {
-  const treatRef = useRef();
   const { updateCursor, resetCursor } = useCursor();
 
-  useGSAP(
-    () => {
-      let painSplit = SplitText.create(".treat-split", {
-        type: "chars, words, lines",
-      });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: treatRef.current,
-          start: "top 80%",
-          end: "30% 50%",
-          scrub: 2,
-        },
-      });
-
-      tl.from(painSplit.chars, {
-        opacity: 0,
-        stagger: 0.02,
-      });
-    },
-    {
-      dependencies: [treatRef],
-    },
-  );
-
   return (
-    <section
-      ref={treatRef}
-      className="h-full w-full grid grid-cols-1 xl:grid-cols-12 gap-5"
-    >
+    <section className="padding h-full w-full grid grid-cols-1 xl:grid-cols-12 gap-5">
       {/* left  */}
       <div className="col-span-5 flex flex-col gap-10">
         <div className="flex flex-col gap-2">
-          <h3 className="font-medium text-lg treat-split">
-            Conditions We Treat
-          </h3>
-          <h2 className="text-3xl md:text-5xl font-semibold leading-tight treat-split">
+          <h3 className="font-medium text-lg ">Conditions We Treat</h3>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight ">
             Each treatment is fully personalized to your body
           </h2>
         </div>
@@ -131,14 +92,14 @@ const Treatments = ({ treatments = [] }) => {
         onMouseLeave={resetCursor}
       >
         <div className="flex flex-col gap-5">
-          <p className="treat-split">
+          <p className="">
             At HealingHub Multi-Speciality Homoeopathic Clinic in Govandi,
             Mumbai, we provide effective homeopathic treatment for a wide range
             of acute and chronic conditions including skin problems, allergies,
             asthma, sinus issues, digestive disorders, hair fall, hormonal
             imbalances, and lifestyle-related diseases.
           </p>
-          <p className="treat-split">
+          <p className="">
             As a trusted homeopathy doctor in Mumbai, Dr. Mohd Aadil K. Khan
             focuses on personalized treatment that targets the root cause,
             helping patients achieve long-term relief and improved overall

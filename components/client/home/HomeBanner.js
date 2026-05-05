@@ -87,7 +87,6 @@ const HomeBanner = ({ treatments = [] }) => {
         layout="fill"
         objectFit="cover object-right"
         className="brightness-50 absolute top-0 left-0 w-full h-full -z-1"
-        placeholder="blur"
         priority
       />
 

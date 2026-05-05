@@ -45,6 +45,13 @@ export const siteConfig = {
     whatsapp: "https://api.whatsapp.com/send/?phone=919768902678",
   },
 
+  youtubeLinks: [
+    "https://www.youtube.com/embed/0QimRdW5YwE?si=uzUH-by6I33_hyf1",
+    "https://www.youtube.com/embed/RENtM6QpMlk?si=odo5T2RuGtOnie9e",
+    "https://www.youtube.com/embed/bDbcGwVo8N0?si=QeDnQtP3y3lRJqRU",
+    "https://www.youtube.com/embed/_WZfj19DmpA?si=WsyW5A_gg2M0f2nR",
+  ],
+
   navLinks: [
     {
       label: "Home",

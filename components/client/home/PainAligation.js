@@ -121,7 +121,6 @@ const PainAgitation = () => {
                 height={50}
                 width={50}
                 className="w-10 h-10 rounded-full border-2 border-(--primary-forest) object-cover"
-                placeholder="blur"
               />
             ))}
 

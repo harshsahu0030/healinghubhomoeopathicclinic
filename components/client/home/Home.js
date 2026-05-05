@@ -11,6 +11,7 @@ import Solution from "./Solution";
 import Treatments from "../common/Treatment";
 import Doctor from "../common/Doctor";
 import Faqs from "../common/Faqs";
+import Youtube from "../common/Youtube";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -89,6 +90,8 @@ const Home = ({ treatments = [] }) => {
       <section className="padding py-20  h-fit w-full">
         <Treatments treatments={treatments} />
       </section>
+
+      <Youtube containerRef={containerRef} />
 
       <section className="padding py-20 h-full w-full bg-(--bg-dark)">
         <Doctor />

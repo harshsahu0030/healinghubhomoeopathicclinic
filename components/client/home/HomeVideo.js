@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ScollerImage from "@/public/pain04.jpeg";
 import { useCursor } from "@/context/CursorContext";
+import HomeV from "@/public/homeVideo.mp4";
 
 const HomeVideo = () => {
   const vidRef = useRef(null);
@@ -47,14 +46,24 @@ const HomeVideo = () => {
       onMouseLeave={resetCursor}
     >
       <div ref={videoRef} className="w-[50%] h-[50%]">
-        <Image
+        {/* <Image
           src={ScollerImage}
           alt="hello"
           height={800}
           width={800}
           className="w-full h-full object-cover rounded-lg"
           priority
-        />
+        /> */}
+        <video
+          className="w-full h-full object-cover rounded-lg"
+          autoPlay
+          loop
+          muted
+        >
+          <source src={HomeV} type="video/mp4" />
+          <track src={HomeV} />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
   );
