@@ -1,11 +1,5 @@
-import Contact from "@/components/client/common/Contact";
-
 const page = () => {
-  return (
-    <>
-      <Contact />
-    </>
-  );
+  return <></>;
 };
 
 export default page;
