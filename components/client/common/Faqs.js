@@ -2,7 +2,7 @@ import Faq from "./Faq";
 
 const Faqs = ({ faqs = [] }) => {
   return (
-    <div className=" w-full flex flex-col xl:flex-row gap-5">
+    <div className="padding py-20 h-fulll flex flex-col xl:flex-row gap-5">
       {/* left  */}
       <div className="flex flex-1 flex-col gap-5">
         <h3 className="font-medium text-lg">Answers you should to know</h3>

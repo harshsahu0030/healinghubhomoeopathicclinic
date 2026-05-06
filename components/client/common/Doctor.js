@@ -45,7 +45,10 @@ const Doctor = () => {
   );
 
   return (
-    <div ref={docRef} className="w-full h-w-full">
+    <section
+      ref={docRef}
+      className="padding py-20 h-full w-full bg-(--bg-dark)"
+    >
       <div className="padding flex flex-col gap-20">
         {/* top  */}
         <div className="flex flex-col gap-5 text-(--text-white) col-span-8">
@@ -96,7 +99,7 @@ const Doctor = () => {
           <Marquee data={doctorImages} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

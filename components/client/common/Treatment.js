@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Treatments = ({ treatments = [] }) => {
   return (
-    <section className="padding h-full w-full grid grid-cols-1 xl:grid-cols-12 gap-5">
+    <section className="padding py-20 h-full w-full grid grid-cols-1 xl:grid-cols-12 gap-5">
       {/* left  */}
       <div className="col-span-5 flex flex-col gap-10">
         <div className="flex flex-col gap-2">

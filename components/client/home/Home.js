@@ -87,19 +87,13 @@ const Home = ({ treatments = [] }) => {
         <Solution />
       </section>
 
-      <section className="padding py-20  h-fit w-full">
-        <Treatments treatments={treatments} />
-      </section>
+      <Treatments treatments={treatments} />
 
       <Youtube containerRef={containerRef} />
 
-      <section className="padding py-20 h-full w-full bg-(--bg-dark)">
-        <Doctor />
-      </section>
+      <Doctor />
 
-      <section className="padding py-20  h-fit w-full">
-        <Faqs />
-      </section>
+      <Faqs />
     </div>
   );
 };

@@ -75,7 +75,10 @@ const PainAgitation = () => {
   );
 
   return (
-    <div ref={painRef} className="h-full w-full flex flex-col">
+    <div
+      ref={painRef}
+      className="h-full w-full flex flex-col"
+    >
       {/* Top  */}
       <h3 className="pain-split font-medium text-lg">Pain & Agitation</h3>
 
