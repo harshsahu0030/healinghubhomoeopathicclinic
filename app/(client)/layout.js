@@ -7,7 +7,7 @@ import Testimonials from "@/components/client/common/Testimonials";
 import { getTestimonialsList } from "@/lib/graphql/testimonials";
 import { getTreatmentsList } from "@/lib/graphql/treatment";
 
-export default async function RootLayout({ children }) {
+export default async function ClientLayout({ children }) {
   const treatments = await getTreatmentsList();
   const testimonials = await getTestimonialsList();
 

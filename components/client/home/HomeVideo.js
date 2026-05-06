@@ -42,6 +42,8 @@ const HomeVideo = () => {
           loop
           muted
           preload="true"
+          height={500}
+          width={500}
         >
           <source src={HomeV} type="video/mp4" />
           <track src={HomeV} />
