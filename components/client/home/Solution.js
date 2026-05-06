@@ -59,8 +59,8 @@ const Solution = () => {
       line2: "Patients",
     },
     {
-      head: "5",
-      headEnd: "",
+      head: "4.9",
+      headEnd: "+",
       line1: "Patient ",
       line2: "Experience Rating",
     },

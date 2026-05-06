@@ -1,5 +1,11 @@
+import Heading from "@/components/client/common/Heading";
+
 const page = () => {
-  return <div>Blog</div>;
+  return (
+    <>
+      <Heading title="Our Blog" />
+    </>
+  );
 };
 
 export default page;
