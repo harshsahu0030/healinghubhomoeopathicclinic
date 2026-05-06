@@ -2,7 +2,6 @@ import Doctor01 from "@/public/doctor/doctor-1.webp";
 import Doctor02 from "@/public/doctor/doctor-2.webp";
 import Doctor03 from "@/public/doctor/doctor-3.webp";
 import Doctor04 from "@/public/doctor/doctor-4.webp";
-import Doctor05 from "@/public/doctor/doctor-5.webp";
 import Doctor06 from "@/public/doctor/doctor-6.webp";
 import Doctor07 from "@/public/doctor/doctor-7.webp";
 import Doctor08 from "@/public/doctor/doctor-8.webp";
@@ -91,10 +90,6 @@ export const siteConfig = {
     {
       label: "Dr. Mohd Aadil K. Khan",
       url: Doctor04,
-    },
-    {
-      label: "Dr. Mohd Aadil K. Khan",
-      url: Doctor05,
     },
     {
       label: "Dr. Mohd Aadil K. Khan",

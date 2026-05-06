@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
+import Doctor06 from "@/public/doctor/doctor-6.webp";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -123,7 +124,7 @@ const Solution = () => {
       <div className="w-full flex flex-col gap-10">
         <div className="w-full h-full top-0 left-0  overflow-hidden sol-images">
           <Image
-            src={Solutions01}
+            src={Doctor06}
             alt="healing hub homoeopathic clinic"
             width={600}
             height={600}
