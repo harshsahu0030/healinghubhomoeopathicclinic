@@ -12,6 +12,7 @@ import Treatments from "../common/Treatment";
 import Doctor from "../common/Doctor";
 import Faqs from "../common/Faqs";
 import Youtube from "../common/Youtube";
+import Contact from "../common/Contact";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -92,6 +93,8 @@ const Home = ({ treatments = [] }) => {
       <Youtube containerRef={containerRef} />
 
       <Doctor />
+
+      <Contact />
 
       <Faqs />
     </div>

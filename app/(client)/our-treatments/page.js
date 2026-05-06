@@ -1,4 +1,3 @@
-import Doctor from "@/components/client/common/Doctor";
 import Treatments from "@/components/client/common/Treatment";
 import { getTreatmentsList } from "@/lib/graphql/treatment";
 
@@ -7,7 +6,6 @@ const page = async () => {
 
   return (
     <>
-      <Doctor />
       <Treatments treatments={treatments} />
     </>
   );

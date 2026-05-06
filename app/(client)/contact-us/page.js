@@ -1,5 +1,11 @@
+import Contact from "@/components/client/common/Contact";
+
 const page = () => {
-  return <div>Contact Us</div>;
+  return (
+    <>
+      <Contact />
+    </>
+  );
 };
 
 export default page;
