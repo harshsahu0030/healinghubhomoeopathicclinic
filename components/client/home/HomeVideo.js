@@ -33,7 +33,7 @@ const HomeVideo = () => {
     <section
       aria-label="home-video"
       ref={vidRef}
-      className="relative h-screen w-full flex justify-center items-center"
+      className="relative h-screen w-full hidden xl:flex justify-center items-center"
     >
       <div ref={videoRef} className="w-[50%] h-[50%]">
         <video
@@ -44,6 +44,7 @@ const HomeVideo = () => {
           preload="true"
           height={500}
           width={500}
+          playsInline
         >
           <source src={HomeV} type="video/mp4" />
           <track src={HomeV} />
