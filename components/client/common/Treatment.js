@@ -4,11 +4,8 @@ import Link from "next/link";
 import { GrNext } from "react-icons/gr";
 import Treatment from "@/public/treatment.jpeg";
 import Image from "next/image";
-import { useCursor } from "@/context/CursorContext";
 
 const Treatments = ({ treatments = [] }) => {
-  const { updateCursor, resetCursor } = useCursor();
-
   return (
     <section className="padding h-full w-full grid grid-cols-1 xl:grid-cols-12 gap-5">
       {/* left  */}
@@ -22,17 +19,7 @@ const Treatments = ({ treatments = [] }) => {
 
         <ul className="group flex flex-col gap-3">
           {treatments?.map((treatment, index) => (
-            <li
-              key={index}
-              className="w-full"
-              onMouseEnter={() =>
-                updateCursor({
-                  cursorClass: "h-80 w-80 rounded-lg",
-                  image: `https://content.healinghubhomoeopathicclinic.com${treatment?.featuredImage?.node?.filePath}`,
-                })
-              }
-              onMouseLeave={resetCursor}
-            >
+            <li key={index} className="w-full">
               <Link
                 href={`/our-treatments/${treatment?.slug}`}
                 className="flex items-center justify-between gap-5 font-medium text-base xl:text-xl px-6 py-3 bg-(--bg-light) rounded-lg transition-all duration-300 ease-in-out opacity-100 group-hover:opacity-50 hover:opacity-100! hover:text-(--text-dark) hover:bg-(--accent-clay)"
@@ -59,17 +46,7 @@ const Treatments = ({ treatments = [] }) => {
       </div>
 
       {/* center  */}
-      <div
-        className="col-span-4"
-        onMouseEnter={() =>
-          updateCursor({
-            cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
-            text: "Our Treatments",
-            textClass: "text-(--text-white)",
-          })
-        }
-        onMouseLeave={resetCursor}
-      >
+      <div className="col-span-4">
         <Image
           src={Treatment}
           alt="healing hub homoeopathic clinic"
@@ -80,17 +57,7 @@ const Treatments = ({ treatments = [] }) => {
       </div>
 
       {/* right  */}
-      <div
-        className="col-span-3 flex flex-col justify-between gap-5"
-        onMouseEnter={() =>
-          updateCursor({
-            cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
-            text: "Our Treatments",
-            textClass: "text-(--text-white)",
-          })
-        }
-        onMouseLeave={resetCursor}
-      >
+      <div className="col-span-3 flex flex-col justify-between gap-5">
         <div className="flex flex-col gap-5">
           <p className="">
             At HealingHub Multi-Speciality Homoeopathic Clinic in Govandi,

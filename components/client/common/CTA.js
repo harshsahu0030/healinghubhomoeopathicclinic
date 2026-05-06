@@ -1,23 +1,10 @@
 "use client";
 
-import { useCursor } from "@/context/CursorContext";
 import Link from "next/link";
 
 const CTA = () => {
-  const { updateCursor, resetCursor } = useCursor();
-
   return (
-    <section
-      className="padding h-full w-full my-10"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
-          text: "Book a Consultation",
-          textClass: "text-(--text-dark)",
-        })
-      }
-      onMouseLeave={resetCursor}
-    >
+    <section className="padding h-full w-full my-10">
       <div className="flex flex-col items-center gap-8 h-full w-full px-10 py-20 rounded-lg bg-(--bg-dark) text-(--text-white)">
         <h2 className="text-center text-3xl xl:text-6xl">
           Start Your Natural Healing Journey Today

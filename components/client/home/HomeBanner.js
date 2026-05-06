@@ -10,7 +10,6 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { siteConfig } from "@/data/siteConfig";
 import { FaAngleDown } from "react-icons/fa6";
-import { useCursor } from "@/context/CursorContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -18,7 +17,6 @@ if (typeof window !== "undefined") {
 
 const HomeBanner = ({ treatments = [] }) => {
   const bannerRef = useRef(null);
-  const { updateCursor, resetCursor } = useCursor();
 
   const [down, setDown] = useState("Please Wait");
 
@@ -69,18 +67,7 @@ const HomeBanner = ({ treatments = [] }) => {
   );
 
   return (
-    <div
-      ref={bannerRef}
-      className="h-full w-full"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
-          text: "Welcome to HealingHub",
-          textClass: "text-(--text-dark)",
-        })
-      }
-      onMouseLeave={resetCursor}
-    >
+    <div ref={bannerRef} className="h-full w-full">
       <Image
         src={HeroImage01}
         alt={siteConfig?.name}

@@ -12,15 +12,12 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Marquee from "../common/Marquee";
-import { useCursor } from "@/context/CursorContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 }
 
 const PainAgitation = () => {
-  const { updateCursor, resetCursor } = useCursor();
-
   const painRef = useRef();
 
   const painPoints = [
@@ -78,18 +75,7 @@ const PainAgitation = () => {
   );
 
   return (
-    <div
-      ref={painRef}
-      className="h-full w-full flex flex-col"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
-          text: "Pain Aligation",
-          textClass: "text-(--text-white)",
-        })
-      }
-      onMouseLeave={resetCursor}
-    >
+    <div ref={painRef} className="h-full w-full flex flex-col">
       {/* Top  */}
       <h3 className="pain-split font-medium text-lg">Pain & Agitation</h3>
 

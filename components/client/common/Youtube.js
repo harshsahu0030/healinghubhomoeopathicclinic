@@ -1,6 +1,5 @@
 "use client";
 
-import { useCursor } from "@/context/CursorContext";
 import { siteConfig } from "@/data/siteConfig";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -12,8 +11,6 @@ if (typeof window !== "undefined") {
 }
 
 const Youtube = () => {
-  const { updateCursor, resetCursor } = useCursor();
-
   // 1. Create a local ref for this specific component
   const youtubeRef = useRef(null);
 
@@ -41,10 +38,7 @@ const Youtube = () => {
   );
 
   return (
-    <section
-      ref={youtubeRef}
-      className="h-screen relative w-full overflow-hidden"
-    >
+    <section ref={youtubeRef} className="h-screen relative w-full">
       <div className="h-full w-full flex flex-col items-center justify-center text-[20vw] text-(--text-dark) font-bold leading-[20vw]">
         <span>Success</span>
         <span>Stories</span>

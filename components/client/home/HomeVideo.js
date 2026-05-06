@@ -3,13 +3,11 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useCursor } from "@/context/CursorContext";
 import HomeV from "@/public/homeVideo.mp4";
 
 const HomeVideo = () => {
   const vidRef = useRef(null);
   const videoRef = useRef(null);
-  const { updateCursor, resetCursor } = useCursor();
 
   useGSAP(
     () => {
@@ -36,29 +34,14 @@ const HomeVideo = () => {
       aria-label="home-video"
       ref={vidRef}
       className="relative h-screen w-full flex justify-center items-center"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
-          text: "Healing Video",
-          textClass: "text-(--text-dark)",
-        })
-      }
-      onMouseLeave={resetCursor}
     >
       <div ref={videoRef} className="w-[50%] h-[50%]">
-        {/* <Image
-          src={ScollerImage}
-          alt="hello"
-          height={800}
-          width={800}
-          className="w-full h-full object-cover rounded-lg"
-          priority
-        /> */}
         <video
           className="w-full h-full object-cover rounded-lg"
           autoPlay
           loop
           muted
+          preload="true"
         >
           <source src={HomeV} type="video/mp4" />
           <track src={HomeV} />

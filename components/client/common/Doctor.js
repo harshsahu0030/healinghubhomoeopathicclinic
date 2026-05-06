@@ -1,6 +1,5 @@
 "use client";
 
-import { useCursor } from "@/context/CursorContext";
 import { siteConfig } from "@/data/siteConfig";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -19,7 +18,6 @@ const Doctor = () => {
   const { name, doctorImages } = siteConfig;
 
   const docRef = useRef();
-  const { updateCursor, resetCursor } = useCursor();
 
   useGSAP(
     () => {
@@ -47,18 +45,7 @@ const Doctor = () => {
   );
 
   return (
-    <div
-      ref={docRef}
-      className="w-full h-w-full"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
-          text: "Dr. Mohd Aadil K. Khan",
-          textClass: "text-(--text-dark)",
-        })
-      }
-      onMouseLeave={resetCursor}
-    >
+    <div ref={docRef} className="w-full h-w-full">
       <div className="padding flex flex-col gap-20">
         {/* top  */}
         <div className="flex flex-col gap-5 text-(--text-white) col-span-8">

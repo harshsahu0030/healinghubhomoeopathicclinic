@@ -1,21 +1,8 @@
-import { useCursor } from "@/context/CursorContext";
 import Faq from "./Faq";
 
 const Faqs = ({ faqs = [] }) => {
-  const { updateCursor, resetCursor } = useCursor();
-
   return (
-    <div
-      className=" w-full flex flex-col xl:flex-row gap-5"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-dark)/70",
-          text: "FAQs",
-          textClass: "text-(--text-white)",
-        })
-      }
-      onMouseLeave={resetCursor}
-    >
+    <div className=" w-full flex flex-col xl:flex-row gap-5">
       {/* left  */}
       <div className="flex flex-1 flex-col gap-5">
         <h3 className="font-medium text-lg">Answers you should to know</h3>

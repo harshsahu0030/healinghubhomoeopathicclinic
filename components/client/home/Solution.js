@@ -10,15 +10,12 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
-import { useCursor } from "@/context/CursorContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 }
 
 const Solution = () => {
-  const { updateCursor, resetCursor } = useCursor();
-
   const solRef = useRef(null);
 
   const IntroduceYou = [
@@ -121,14 +118,6 @@ const Solution = () => {
     <div
       ref={solRef}
       className="h-full grid grid-cols-1 xl:grid-cols-2 gap-20 xl:gap-5"
-      onMouseEnter={() =>
-        updateCursor({
-          cursorClass: "h-30 w-30 rounded-full bg-(--bg-mint)/70",
-          text: "Pain Aligation",
-          textClass: "text-(--text-dark)",
-        })
-      }
-      onMouseLeave={resetCursor}
     >
       {/* left  */}
       <div className="w-full flex flex-col gap-10">
