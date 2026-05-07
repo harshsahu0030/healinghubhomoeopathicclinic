@@ -81,9 +81,9 @@ const Header = () => {
             <Image
               src={Logo}
               alt="healinghub logo"
-              height={500}
-              width={500}
-              className="h-full w-fit object-contain bg-red-500"
+              height={800}
+              width={800}
+              className="h-full object-contain"
             />
           </Link>
         </div>
