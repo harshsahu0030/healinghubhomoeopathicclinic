@@ -76,7 +76,7 @@ const Header = () => {
         ref={headerRef}
         className="h-20 w-full fixed top-0 left-0  z-999 flex padding items-center justify-between  xl:py-2 gap-5"
       >
-        <Link href="/" className="h-full w-fit max-w[50%]">
+        <Link href="/" className="h-full w-fit max-w-[50%]">
           <Image
             src={Logo}
             alt="healinghub logo"

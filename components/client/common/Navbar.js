@@ -35,7 +35,7 @@ const Navbar = ({ onClose, navRef }) => {
       className="fixed top-0 -right-full h-screen overflow-y-scroll w-full max-md:pb-20  bg-(--bg-dark) text-(--text-white)  flex flex-col gap-5  z-9999 "
     >
       <div className="h-20 w-full padding flex items-center justify-between py-4 xl:py-2 gap-5">
-        <Link href="/" className="h-full w-fit max-w[50%]">
+        <Link href="/" className="h-full w-fit max-w-[50%]">
           <Image
             src={Logo}
             alt="healinghub logo"

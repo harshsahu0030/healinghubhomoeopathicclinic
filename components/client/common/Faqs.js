@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Faq from "./Faq";
-import FaqsImage from "@/public/doctor-01.png";
 
 const Faqs = ({ faqs = [] }) => {
   return (
@@ -13,28 +11,18 @@ const Faqs = ({ faqs = [] }) => {
           Frequently Asked Questions (FAQs)
         </h2>
 
-        <Image
-          src={FaqsImage}
-          alt="healing hub homoeopathic clinic"
-          width={600}
-          height={600}
-          className=" object-cover w-full rounded-lg"
-        />
-      </div>
-
-      {/* right  */}
-      <div className="flex flex-1 flex-col gap-5">
         <p className="">
           Tired of recurring health issues and unsure what to do next? These
           answers will help you understand how natural homeopathy can finally
           give you lasting relief and peace of mind.
         </p>
+      </div>
 
-        <div className="w-full flex flex-col gap-5">
-          {faqs?.map((item, index) => (
-            <Faq key={index} data={item} />
-          ))}
-        </div>
+      {/* right  */}
+      <div className="w-full flex-1 flex flex-col gap-2">
+        {faqs?.map((item, index) => (
+          <Faq key={index} data={item} />
+        ))}
       </div>
     </div>
   );

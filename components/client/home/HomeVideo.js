@@ -41,10 +41,10 @@ const HomeVideo = () => {
           autoPlay
           loop
           muted
-          preload="true"
           height={500}
           width={500}
           playsInline
+          loading="lazy"
         >
           <source src={HomeV} type="video/mp4" />
           <track src={HomeV} />
