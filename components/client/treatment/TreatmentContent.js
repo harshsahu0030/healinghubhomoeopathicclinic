@@ -16,11 +16,6 @@ const TreatmentContent = ({ treatment = {} }) => {
         height={600}
         className="w-full"
       />
-
-      <div
-        dangerouslySetInnerHTML={{ __html: treatment?.content }}
-        className="post-content"
-      ></div>
     </div>
   );
 };
