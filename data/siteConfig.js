@@ -112,4 +112,57 @@ export const siteConfig = {
       url: Doctor10,
     },
   ],
+
+  homeFaqs: [
+    {
+      question: "What conditions can homeopathy treat?",
+      answer:
+        "Homeopathy can effectively treat a wide range of acute and chronic conditions including skin problems, allergies, asthma, digestive issues, hair fall, hormonal imbalance, joint pain, and stress-related disorders.",
+    },
+    {
+      question: "Is homeopathy safe?",
+      answer:
+        "Yes, homeopathy is completely safe. The medicines are natural, gentle, and free from harmful side effects, making them suitable for people of all age groups, including children and elderly patients.",
+    },
+    {
+      question: "How long does homeopathy take to work?",
+      answer:
+        "The duration depends on the condition. Acute problems may improve quickly, while chronic conditions take more time as the treatment focuses on the root cause for long-term relief.",
+    },
+    {
+      question: "Does homeopathy have any side effects?",
+      answer:
+        "No, homeopathy does not cause side effects when prescribed correctly. It works by stimulating the body’s natural healing process.",
+    },
+    {
+      question: "Will I need to take homeopathy medicines for a long time?",
+      answer:
+        "Not necessarily. The goal is to treat the root cause so that your dependency on medicines reduces over time.",
+    },
+    {
+      question: "Can I take homeopathy along with other treatments?",
+      answer:
+        "Yes, homeopathy can be taken alongside conventional treatments. However, it is always best to consult your doctor for proper guidance.",
+    },
+    {
+      question: "Is homeopathy effective for chronic diseases?",
+      answer:
+        "Yes, homeopathy is especially known for treating chronic and recurring conditions by addressing the underlying cause rather than just symptoms.",
+    },
+    {
+      question: "Do you provide personalized treatment?",
+      answer:
+        "Absolutely. Every patient receives a customized treatment plan based on their symptoms, lifestyle, and overall health condition.",
+    },
+    {
+      question: "Where is your clinic located?",
+      answer:
+        "HealingHub Multi-Speciality Homoeopathic Clinic is located at Aventus Commercial Complex, Govandi, Mumbai.",
+    },
+    {
+      question: "How can I book an appointment?",
+      answer:
+        "You can easily book your consultation by calling us or using the “Book Your Consultation Now” button on our website.",
+    },
+  ],
 };

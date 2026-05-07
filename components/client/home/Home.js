@@ -12,6 +12,7 @@ import Treatments from "../treatment/Treatment";
 import Doctor from "../common/Doctor";
 import Faqs from "../common/Faqs";
 import Youtube from "../common/Youtube";
+import { siteConfig } from "@/data/siteConfig";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -93,7 +94,7 @@ const Home = ({ treatments = [] }) => {
 
       <Doctor />
 
-      <Faqs />
+      <Faqs faqs={siteConfig?.homeFaqs} />
     </div>
   );
 };

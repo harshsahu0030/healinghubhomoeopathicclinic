@@ -21,7 +21,9 @@ const page = async ({ params }) => {
 
         {/* right  */}
         <article className="w-full lg:col-span-4 flex flex-col gap-5">
-          <h2 className="text-2xl font-bold">Our Treatments</h2>
+          <h3 className="tflex items-center justify-between gap-5 font-bold text-2xl px-6 py-3 bg-(--bg-light) rounded-lg ">
+            Our Treatments
+          </h3>
           <TreatmentList treatments={treatments} />
         </article>
       </section>

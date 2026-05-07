@@ -7,9 +7,9 @@ const Faq = ({ data = {} }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="flex flex-col gap-5 bg-(--bg-white) p-4 rounded-lg">
+    <div className="flex flex-col gap-5 bg-(--bg-light) p-4 rounded-lg">
       <h3
-        className="font-medium textibase md:text-lg flex items-center justify-between gap-5 cursor-pointer"
+        className="font-medium text-base md:text-lg flex items-center justify-between gap-5 cursor-pointer"
         onClick={() => setShow((prev) => !prev)}
       >
         {data?.question}

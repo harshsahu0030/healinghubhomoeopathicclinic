@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Faq from "./Faq";
+import FaqsImage from "@/public/doctor-01.png";
 
 const Faqs = ({ faqs = [] }) => {
   return (
@@ -10,6 +12,14 @@ const Faqs = ({ faqs = [] }) => {
         <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
           Frequently Asked Questions (FAQs)
         </h2>
+
+        <Image
+          src={FaqsImage}
+          alt="healing hub homoeopathic clinic"
+          width={600}
+          height={600}
+          className=" object-cover w-full rounded-lg"
+        />
       </div>
 
       {/* right  */}
@@ -20,7 +30,7 @@ const Faqs = ({ faqs = [] }) => {
           give you lasting relief and peace of mind.
         </p>
 
-        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-5 pt-10">
+        <div className="w-full flex flex-col gap-5">
           {faqs?.map((item, index) => (
             <Faq key={index} data={item} />
           ))}

@@ -12,7 +12,7 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="min-h-screen w-full">{children}</body>
     </html>
   );

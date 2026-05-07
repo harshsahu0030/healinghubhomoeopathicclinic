@@ -76,17 +76,15 @@ const Header = () => {
         ref={headerRef}
         className="h-20 w-full fixed top-0 left-0  z-999 flex padding items-center justify-between  xl:py-2 gap-5"
       >
-        <div className="h-full w-[50%] flex justify-start items-center">
-          <Link href="/" className="h-full w-full">
-            <Image
-              src={Logo}
-              alt="healinghub logo"
-              height={800}
-              width={800}
-              className="h-full object-contain"
-            />
-          </Link>
-        </div>
+        <Link href="/" className="h-full w-fit max-w[50%]">
+          <Image
+            src={Logo}
+            alt="healinghub logo"
+            height={800}
+            width={800}
+            className="h-full w-full object-contain"
+          />
+        </Link>
 
         <button
           className="flex items-center justify-center gap-2 btn text-(--text-white) border-2 py-1 px-6 rounded-full text-sm"

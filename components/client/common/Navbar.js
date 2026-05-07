@@ -35,13 +35,15 @@ const Navbar = ({ onClose, navRef }) => {
       className="fixed top-0 -right-full h-screen overflow-y-scroll w-full max-md:pb-20  bg-(--bg-dark) text-(--text-white)  flex flex-col gap-5  z-9999 "
     >
       <div className="h-20 w-full padding flex items-center justify-between py-4 xl:py-2 gap-5">
-        <Image
-          src={Logo}
-          alt="healinghub logo"
-          height={500}
-          width={500}
-          className="h-full w-fit object-contain"
-        />
+        <Link href="/" className="h-full w-fit max-w[50%]">
+          <Image
+            src={Logo}
+            alt="healinghub logo"
+            height={800}
+            width={800}
+            className="h-full w-full object-contain"
+          />
+        </Link>
 
         <button
           className="flex items-center justify-center gap-2 btn text-(--text-white) border-2 py-1 px-6 rounded-full"
@@ -54,7 +56,7 @@ const Navbar = ({ onClose, navRef }) => {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 h-full w-full p-4">
         {/* left  */}
-        <div className="hidden md:flex items-end h-full w-full">
+        <div className="hidden xl:flex items-end h-full w-full">
           <video
             className="h-[40vh] object-contain rounded-lg"
             autoPlay
