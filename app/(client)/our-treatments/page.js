@@ -1,5 +1,5 @@
 import Heading from "@/components/client/common/Heading";
-import Treatments from "@/components/client/common/Treatment";
+import Treatments from "@/components/client/treatment/Treatment";
 import { getTreatmentsList } from "@/lib/graphql/treatment";
 
 const page = async () => {

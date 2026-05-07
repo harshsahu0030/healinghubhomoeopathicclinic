@@ -83,7 +83,7 @@ const Header = () => {
               alt="healinghub logo"
               height={500}
               width={500}
-              className="h-full w-fit object-contain"
+              className="h-full w-fit object-contain bg-red-500"
             />
           </Link>
         </div>

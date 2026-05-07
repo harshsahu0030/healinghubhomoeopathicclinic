@@ -53,3 +53,28 @@
     color: var(--accent-clay);
   }
 }
+
+@layer utilities {
+  .post-content p {
+    @apply pb-4 text-lg;
+  }
+
+  .post-content ul {
+    @apply pb-4 list-disc list-inside text-lg;
+  }
+
+  .post-content figure {
+    @apply pb-4;
+  }
+
+  .post-content figure figcaption {
+    @apply text-center py-2;
+  }
+
+  .post-content h2 {
+    @apply text-3xl font-semibold py-4;
+  }
+  .post-content h3 {
+    @apply text-xl font-semibold py-4;
+  }
+}

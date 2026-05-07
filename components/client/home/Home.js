@@ -8,7 +8,7 @@ import HomeBanner from "./HomeBanner";
 import PainAgitation from "./PainAligation";
 import HomeVideo from "./HomeVideo";
 import Solution from "./Solution";
-import Treatments from "../common/Treatment";
+import Treatments from "../treatment/Treatment";
 import Doctor from "../common/Doctor";
 import Faqs from "../common/Faqs";
 import Youtube from "../common/Youtube";

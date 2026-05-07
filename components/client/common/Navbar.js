@@ -9,8 +9,8 @@ import { FaClock } from "react-icons/fa";
 import { createElement } from "react";
 import Image from "next/image";
 import Logo from "@/public/logo-trans-hor.webp";
-import navImage from "@/public/pain01.jpeg";
 import { siteConfig } from "@/data/siteConfig";
+import HomeV from "@/public/homeVideo.mp4";
 
 const Navbar = ({ onClose, navRef }) => {
   const {
@@ -54,14 +54,21 @@ const Navbar = ({ onClose, navRef }) => {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 h-full w-full p-4">
         {/* left  */}
-        <div className="hidden md:flex items-end w-full">
-          <Image
-            src={navImage}
-            alt="healinghub"
+        <div className="hidden md:flex items-end h-full w-full">
+          <video
+            className="h-[40vh] object-contain rounded-lg"
+            autoPlay
+            loop
+            muted
+            preload="true"
             height={500}
             width={500}
-            className="w-full object-cover"
-          />
+            playsInline
+          >
+            <source src={HomeV} type="video/mp4" />
+            <track src={HomeV} />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         {/* right  */}
