@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { GrNext } from "react-icons/gr";
 import Treatment from "@/public/treatment.jpeg";
 import Image from "next/image";
 import TreatmentList from "./TreatmentList";
