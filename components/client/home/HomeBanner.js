@@ -71,9 +71,10 @@ const HomeBanner = ({ treatments = [] }) => {
       <Image
         src={HeroImage01}
         alt={siteConfig?.name}
-        layout="fill"
         objectFit="cover object-right"
         className="brightness-50 absolute top-0 left-0 w-full h-full -z-1"
+        layout="fill"
+        sizes="(max-width: 768px), (max-width: 1200px)"
         priority
       />
 

@@ -1,10 +1,11 @@
+import BlogCard from "@/components/client/blog/BlogCard";
+import BlogCategory from "@/components/client/blog/BlogCategory";
 import Heading from "@/components/client/common/Heading";
-import TreatmentContent from "@/components/client/treatment/TreatmentContent";
-import TreatmentList from "@/components/client/treatment/TreatmentList";
-import { getTreatmentsList } from "@/lib/graphql/treatment";
+import { getBlogCategories, getBlogList } from "@/lib/graphql/blog";
 
 const page = async ({ params }) => {
-  const treatments = await getTreatmentsList();
+  const blog = await getBlogList();
+  const blogCategories = await getBlogCategories();
 
   return (
     <>
@@ -12,15 +13,16 @@ const page = async ({ params }) => {
 
       <section className="padding py-20 h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-5">
         {/* left  */}
-        <div className="w-full lg:col-span-8"></div>
+        <div className="w-full lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+          {blog?.nodes?.map((item, index) => (
+            <BlogCard key={index} blog={item} />
+          ))}
+        </div>
 
         {/* right  */}
-        <article className="w-full lg:col-span-4 flex flex-col gap-5">
-          <h3 className="tflex items-center justify-between gap-5 font-bold text-2xl px-6 py-3 bg-(--bg-light) rounded-lg ">
-            Our Treatments
-          </h3>
-          <TreatmentList treatments={treatments} />
-        </article>
+        <aside className="w-full lg:col-span-4 flex flex-col gap-5">
+          <BlogCategory catgeories={blogCategories} />
+        </aside>
       </section>
     </>
   );

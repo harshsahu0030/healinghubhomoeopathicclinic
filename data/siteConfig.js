@@ -108,7 +108,7 @@ export const siteConfig = {
       url: Doctor09,
     },
     {
-      label: "Dr. Mohd Aadil K. Khan",
+      label: "Dr. Mohd Aadil S. Khan",
       url: Doctor10,
     },
   ],
