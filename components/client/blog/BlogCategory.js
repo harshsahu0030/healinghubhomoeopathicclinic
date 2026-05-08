@@ -3,7 +3,7 @@ import { MdCategory } from "react-icons/md";
 
 const BlogCategory = ({ catgeories }) => {
   return (
-    <div className="h-fit w-full p-5 bg-(--bg-light) flex flex-col gap-5">
+    <div className="h-fit w-full p-5 bg-(--bg-light) flex flex-col gap-5 shadow-lg rounded-lg">
       <h2 className="flex items-center gap-2 text-lg font-semibold"><MdCategory /> Categories</h2>
 
       <hr className="border border-(--bg-dark)/40" />

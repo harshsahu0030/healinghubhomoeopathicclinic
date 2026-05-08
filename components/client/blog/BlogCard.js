@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BlogCard = ({ blog }) => {
   return (
-    <article className="h-[60vh] w-full p-5 rounded-lg bg-(--bg-light) flex flex-col gap-5">
+    <article className="h-[60vh] w-full p-5 rounded-lg bg-(--bg-light) flex flex-col gap-5 shadow-lg">
       <div className="flex-3 overflow-hidden rounded-lg">
         <Image
           src={blog?.featuredImage?.node?.sourceUrl}
@@ -26,10 +26,13 @@ const BlogCard = ({ blog }) => {
           ,<address>{blog?.author?.node?.name}</address>
         </div>
         <h2 className="text-lg font-semibold">
-          {blog?.title}
+          <Link href={`/blog/${blog?.slug}`}>{blog?.title}</Link>
         </h2>
 
-        <Link href="/" className="font-semibold underline text-(--primary-forest) ">
+        <Link
+          href={`/blog/${blog?.slug}`}
+          className="font-semibold underline text-(--primary-forest) "
+        >
           Read More
         </Link>
       </div>
