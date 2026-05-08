@@ -4,6 +4,7 @@ import BlogPageButton from "@/components/client/blog/BlogPageButton";
 import BlogSearch from "@/components/client/blog/BlogSearch";
 import Heading from "@/components/client/common/Heading";
 import { getBlogCategories, getBlogList } from "@/lib/graphql/blog";
+import Link from "next/link";
 
 const page = async ({ searchParams }) => {
   const sParams = await searchParams;
@@ -25,9 +26,13 @@ const page = async ({ searchParams }) => {
         <div className="w-full lg:col-span-8 flex flex-col gap-10">
           <BlogSearch />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {blog?.nodes?.map((item, index) => (
-              <BlogCard key={index} blog={item} />
-            ))}
+            {blog?.nodes?.length > 0 ? (
+              blog?.nodes?.map((item, index) => (
+                <BlogCard key={index} blog={item} />
+              ))
+            ) : (
+              <p className="text-lg font-medium">No Blog Found</p>
+            )}
           </div>
           <BlogPageButton pageInfo={blog?.pageInfo} />
         </div>
