@@ -1,20 +1,53 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 const BlogSearch = () => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const [text, setText] = useState(searchParams.get("q")?.toString() || "");
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      const params = new URLSearchParams(searchParams);
+
+      if (text) {
+        params.set("q", text);
+      } else {
+        params.delete("q", "p", "c");
+      }
+
+      replace(`${pathname}?${params.toString()}`);
+    }, 500);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [text, searchParams, pathname, replace]);
+
   return (
     <div className="w-full h-fit p-5 bg-(--bg-light) flex flex-col gap-2 rounded-lg shadow-lg">
       <label
-        id="blogSeach"
+        htmlFor="blogSearchInput"
         className="text-lg font-semibold flex items-center gap-2 cursor-pointer"
       >
         <FiSearch /> Search Blog
       </label>
-      <input
-        id="blogSeach"
-        placeholder="Type here..."
-        className="p-2 rounded-lg border border-(--bg-dark)/40"
-      />
+
+      <div className="flex items-center gap-2 flex-nowrap">
+        <input
+          id="blogSearchInput"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Type here..."
+          className="h-full p-2 rounded-lg border border-(--bg-dark)/40 text-black w-full"
+        />
+        <button className="h-full py-2 px-6 bg-(--primary-forest) text-(--text-white) flex items-center justify-center rounded-lg font-semibold text-sm cursor-pointer focus:bg-(--primary-forest)/90">
+          Search
+        </button>
+      </div>
     </div>
   );
 };

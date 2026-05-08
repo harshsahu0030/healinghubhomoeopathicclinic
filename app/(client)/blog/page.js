@@ -5,8 +5,14 @@ import BlogSearch from "@/components/client/blog/BlogSearch";
 import Heading from "@/components/client/common/Heading";
 import { getBlogCategories, getBlogList } from "@/lib/graphql/blog";
 
-const page = async ({ params }) => {
-  const blog = await getBlogList();
+const page = async ({ searchParams }) => {
+  const sParams = await searchParams;
+
+  const query = sParams?.q || "";
+  const cursor = sParams?.p || "";
+  const cat = sParams?.c || "";
+
+  const blog = await getBlogList(cursor, cat, query);
   const blogCategories = await getBlogCategories();
 
   return (
@@ -23,7 +29,7 @@ const page = async ({ params }) => {
               <BlogCard key={index} blog={item} />
             ))}
           </div>
-          <BlogPageButton />
+          <BlogPageButton pageInfo={blog?.pageInfo} />
         </div>
 
         {/* right  */}

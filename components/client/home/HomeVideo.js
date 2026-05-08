@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import HomeV from "@/public/homeVideo.mp4";
+import pain02 from "@/public/pain02.jpeg";
 
 const HomeVideo = () => {
   const vidRef = useRef(null);
@@ -45,6 +46,7 @@ const HomeVideo = () => {
           width={500}
           playsInline
           loading="lazy"
+          poster={pain02}
         >
           <source src={HomeV} type="video/mp4" />
           <track src={HomeV} />

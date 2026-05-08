@@ -148,7 +148,7 @@ const Solution = () => {
       </div>
 
       {/* right  */}
-      <div className="h-full w-full flex flex-col gap-10">
+      <div className="h-full w-full flex flex-col justify-between gap-10">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap1">
             <h3 className="font-medium text-lg sol-split">Introduce Us</h3>
