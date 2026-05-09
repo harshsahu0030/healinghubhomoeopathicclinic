@@ -25,7 +25,7 @@ const page = async ({ searchParams }) => {
 
         <div className="w-full lg:col-span-8 flex flex-col gap-10">
           <BlogSearch />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 gap-5">
             {blog?.nodes?.length > 0 ? (
               blog?.nodes?.map((item, index) => (
                 <BlogCard key={index} blog={item} />

@@ -63,7 +63,7 @@ const Doctor = () => {
           </div>
 
           <p className="doc-split">
-            Dr. Mohd Aadil K. Khan am passionate about helping you reclaim your
+            Dr. Mohd Aadil S. Khan am passionate about helping you reclaim your
             health through gentle, natural therapies. Every patient deserves
             attentive care and a personalised approach.
           </p>

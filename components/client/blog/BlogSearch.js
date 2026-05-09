@@ -24,7 +24,7 @@ const BlogSearch = () => {
         params.delete("q");
       }
 
-      replace(`${pathname}?${params.toString()}`);
+      replace(`${pathname}?${params.toString()}`, { scroll: false });
     }, 500);
 
     return () => clearTimeout(delayDebounceFn);

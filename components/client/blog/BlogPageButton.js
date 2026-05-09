@@ -18,8 +18,7 @@ const BlogPageButton = ({ pageInfo }) => {
       params.delete("p");
     }
 
-    // Keep other params like 'q' (search) or 'category' intact
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    push(`${pathname}?${params.toString()}`);
   };
 
   return (

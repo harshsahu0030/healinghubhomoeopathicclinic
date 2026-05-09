@@ -10,7 +10,7 @@ import Doctor10 from "@/public/doctor/doctor-10.webp";
 
 export const siteConfig = {
   name: "HealingHub Multi-Speciality Homoeopathic Clinic",
-  doctor: "Dr. Mohd Aadil K. Khan",
+  doctor: "Dr. Mohd Aadil S. Khan",
 
   contact: {
     code: "+91",
@@ -19,7 +19,7 @@ export const siteConfig = {
     whatsapp: "https://api.whatsapp.com/send/?phone=919768902678",
   },
 
-  hours: "Mon-Sat - [11am-3pm] - [6pm - 10pm]  and  Sun closed",
+  hours: "Mon-Sat [11am-3pm] - [6pm - 10pm]  - Pre-Appointment Required",
 
   googleMap: "https://share.google/vpiFcnUelRgKjcu0c",
 

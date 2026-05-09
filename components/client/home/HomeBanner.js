@@ -150,7 +150,7 @@ const HomeBanner = ({ treatments = [] }) => {
               priority
             />
             <div className="flex flex-col h-full justify-center col-span-7 gap-1 text-(--text-dark)">
-              <p className="xl:text-lg font-semibold">Dr. Mohd Aadil K. Khan</p>
+              <p className="xl:text-lg font-semibold">Dr. Mohd Aadil S. Khan</p>
               <i className="">
                 Your health is treated individually — not generically.
               </i>

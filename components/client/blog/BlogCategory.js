@@ -18,7 +18,7 @@ const BlogCategory = ({ catgeories }) => {
       params.delete("c");
     }
 
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    push(`${pathname}?${params.toString()}`);
   };
   return (
     <div className="h-fit w-full p-5 bg-(--bg-light) flex flex-col gap-5 shadow-lg rounded-lg">
