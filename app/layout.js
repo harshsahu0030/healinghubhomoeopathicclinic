@@ -16,9 +16,9 @@ export const viewport = {
 export const metadata = {
   title: siteConfig?.name,
   description: siteConfig?.desc,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
+  metadataBase: new URL("https://healinghubhomoeopathicclinic.com"),
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL,
+    canonical: "https://healinghubhomoeopathicclinic.com",
   },
 };
 

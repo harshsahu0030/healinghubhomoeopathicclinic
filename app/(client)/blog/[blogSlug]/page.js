@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const siteUrl = "https://healinghubhomoeopathicclinic.com";
 
   return {
     title: seoData.ogTitle,
