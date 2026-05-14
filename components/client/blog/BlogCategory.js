@@ -28,20 +28,19 @@ const BlogCategory = ({ catgeories }) => {
 
       <hr className="border border-(--bg-dark)/40" />
 
-      <ul className="flex flex-col gap-2 ">
+      <div className="flex flex-col gap-2 ">
         {catgeories?.map((item) => (
-          <li
-            role="button"
+          <button
             onClick={() => {
               handleNavigation(item?.name);
             }}
             key={item?.uri}
-            className="flex items-center gap-2 text-base cursor-pointer font-medium hover:text-(--accent-clay) transition-all duration-300"
+            className="flex items-center gap-2 text-base cursor-pointer font-medium hover:text-(--accent-clay) transition-all duration-300 focus:text-(--accent-clay)"
           >
             <MdCategory /> {item?.name}
-          </li>
+          </button>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

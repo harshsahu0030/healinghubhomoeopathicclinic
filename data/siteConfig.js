@@ -10,6 +10,7 @@ import Doctor10 from "@/public/doctor/doctor-10.webp";
 
 export const siteConfig = {
   name: "HealingHub Multi-Speciality Homoeopathic Clinic",
+  desc: "Get safe, personalized homeopathic treatment at HealingHub Multi-Speciality Homoeopathic Clinic — designed for long-term relief without side effects.",
   doctor: "Dr. Mohd Aadil S. Khan",
 
   contact: {
@@ -165,4 +166,64 @@ export const siteConfig = {
         "You can easily book your consultation by calling us or using the “Book Your Consultation Now” button on our website.",
     },
   ],
+
+  localBusinessSchema: {
+    "@context": "https://schema.org",
+    "@type": "Homeopath", // Be specific!
+    name: "HealingHub Multi-Speciality Homoeopathic Clinic",
+
+    image:
+      "https://content.healinghubhomoeopathicclinic.com/wp-content/uploads/2026/04/logo.png",
+
+    "@id": "https://healinghubhomoeopathicclinic.com",
+
+    url: "https://healinghubhomoeopathicclinic.com",
+
+    telephone: "+91-7620763094", // Your actual number
+
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "  Aventus Commercial Complex, , Road No. , Shop No. 102, 1st floor, D Win, 5/6, Shivaji Nagar, Govandi",
+      addressLocality: "Mumbai", // City
+      addressRegion: "Maharashtra", // State
+      postalCode: "400043",
+      addressCountry: "IN",
+    },
+
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 19.062180133130962, // Get this from Google Maps
+      longitude: 72.92237709558039,
+    },
+
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "11:00", // 11:00 AM
+        closes: "15:00", // 3:00 PM in 24hr format
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "18:00", // 6:00 PM in 24hr format
+        closes: "22:00", // 10:00 PM in 24hr format
+      },
+    ],
+  },
 };

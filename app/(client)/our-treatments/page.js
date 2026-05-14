@@ -5,12 +5,14 @@ import { getTreatmentsList } from "@/lib/graphql/treatment";
 const page = async () => {
   const treatments = await getTreatmentsList();
 
-  return (
-    <>
-      <Heading title="Treatments" />
-      <Treatments treatments={treatments} />
-    </>
-  );
+  if (treatments) {
+    return (
+      <>
+        <Heading title="Treatments" />
+        <Treatments treatments={treatments} />
+      </>
+    );
+  }
 };
 
 export default page;
