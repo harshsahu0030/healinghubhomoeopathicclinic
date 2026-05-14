@@ -25,6 +25,9 @@ export async function generateMetadata({ params }) {
   return {
     title: seoData.ogTitle,
     description: seoData?.description,
+    keywords: seoData?.keywords
+      ? seoData.keywords.split(",").map((k) => k.trim())
+      : [],
 
     metadataBase: new URL(siteUrl),
 

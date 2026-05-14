@@ -12,8 +12,10 @@ const page = async ({ searchParams }) => {
   const cursor = sParams?.p || "";
   const cat = sParams?.c || "";
 
-  const blog = await getBlogList(cursor, cat, query);
-  const blogCategories = await getBlogCategories();
+  const [blog, blogCategories] = await Promise.all([
+    getBlogList(cursor, cat, query),
+    getBlogCategories(),
+  ]);
 
   if (blog && blogCategories) {
     return (

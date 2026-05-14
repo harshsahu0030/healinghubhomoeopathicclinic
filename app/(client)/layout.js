@@ -8,8 +8,10 @@ import { getTestimonialsList } from "@/lib/graphql/testimonials";
 import { getTreatmentsList } from "@/lib/graphql/treatment";
 
 export default async function ClientLayout({ children }) {
-  const treatments = await getTreatmentsList();
-  const testimonials = await getTestimonialsList();
+  const [treatments, testimonials] = await Promise.all([
+    getTreatmentsList(),
+    getTestimonialsList(),
+  ]);
 
   return (
     <>
